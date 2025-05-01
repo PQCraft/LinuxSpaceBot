@@ -18,8 +18,8 @@ _CC := $(TOOLCHAIN)$(CC)
 _LD := $(TOOLCHAIN)$(LD)
 _STRIP := $(TOOLCHAIN)$(STRIP)
 
-CFLAGS += -I$(INCDIR) -Wall -Wextra -O2
-LDFLAGS += -L$(LIBDIR)
+CFLAGS += -I$(INCDIR) -Wall -Wextra -O2 -ffunction-sections
+LDFLAGS += -L$(LIBDIR) -Wl,--gc-sections
 LDLIBS += -ldiscord -lcurl
 
 .SECONDEXPANSION:
